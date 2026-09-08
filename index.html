@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MailGuard AI | Email Intelligence</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="brand">
+            <div class="brand-icon">✉</div>
+            <div>
+                <h2>MailGuard<span> AI</span></h2>
+                <small>Email Intelligence Platform</small>
+            </div>
+        </div>
+
+        <div class="nav-status">
+            <span class="status-dot"></span>
+            AI SYSTEM ONLINE
+        </div>
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="hero-text">
+            <div class="badge">✦ AI POWERED EMAIL SECURITY</div>
+
+            <h1>
+                Smart Email
+                <span>Thread Detection</span>
+            </h1>
+
+            <p>
+                Detect email threads, analyze suspicious signals,
+                and predict email safety using an intelligent
+                ML-style analysis engine.
+            </p>
+
+            <div class="hero-stats">
+                <div>
+                    <strong>AI</strong>
+                    <span>Analyzer</span>
+                </div>
+
+                <div>
+                    <strong>ML</strong>
+                    <span>Prediction</span>
+                </div>
+
+                <div>
+                    <strong>24/7</strong>
+                    <span>Protection</span>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- MAIN -->
+    <main class="dashboard">
+
+        <!-- EMAIL INPUT -->
+        <section class="card email-card">
+
+            <div class="section-title">
+                <div>
+                    <span class="mini-label">EMAIL ANALYZER</span>
+                    <h2>Analyze Your Email</h2>
+                </div>
+
+                <div class="secure-icon">🔐</div>
+            </div>
+
+            <label>Email Subject</label>
+
+            <input
+                type="text"
+                id="subject"
+                placeholder="Enter email subject..."
+            >
+
+            <label>Email Body</label>
+
+            <textarea
+                id="emailBody"
+                placeholder="Paste or type your email content here..."
+            ></textarea>
+
+            <button class="analyze-btn" onclick="analyzeEmail()">
+                <span>✦</span>
+                Analyze Email
+                <span class="arrow">→</span>
+            </button>
+
+            <div class="example-row">
+                <span>Try Demo:</span>
+
+                <button onclick="loadSafe()">Safe Email</button>
+                <button onclick="loadDanger()">Suspicious Email</button>
+            </div>
+
+        </section>
+
+
+        <!-- RESULT -->
+        <section class="card result-card">
+
+            <div class="result-header">
+                <div>
+                    <span class="mini-label">SECURITY STATUS</span>
+                    <h2>AI Prediction</h2>
+                </div>
+
+                <span id="resultBadge" class="result-badge neutral">
+                    WAITING
+                </span>
+            </div>
+
+
+            <div class="security-light">
+
+                <div id="lightRed" class="light red"></div>
+                <div id="lightYellow" class="light yellow"></div>
+                <div id="lightGreen" class="light green"></div>
+
+            </div>
+
+
+            <div class="main-result">
+
+                <div class="score-circle" id="scoreCircle">
+                    <div>
+                        <strong id="riskScore">--</strong>
+                        <span>Risk Score</span>
+                    </div>
+                </div>
+
+                <div class="result-info">
+                    <h3 id="resultTitle">Ready to Analyze</h3>
+
+                    <p id="resultText">
+                        Enter an email and click Analyze Email
+                        to start the AI analysis.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- ML -->
+            <div class="ml-section">
+
+                <div class="ml-title">
+                    <span>🧠 ML Prediction (Demo)</span>
+                    <strong id="confidence">--%</strong>
+                </div>
+
+                <div class="progress">
+                    <div id="mlBar" class="progress-bar"></div>
+                </div>
+
+                <div class="prediction-grid">
+
+                    <div>
+                        <span>🟢 Safe</span>
+                        <strong id="safePercent">--%</strong>
+                    </div>
+
+                    <div>
+                        <span>🟡 Neutral</span>
+                        <strong id="neutralPercent">--%</strong>
+                    </div>
+
+                    <div>
+                        <span>🔴 Dangerous</span>
+                        <strong id="dangerPercent">--%</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- AI TOOLS -->
+        <section class="tools-section">
+
+            <div class="section-heading">
+                <span class="mini-label">INTELLIGENCE ENGINE</span>
+                <h2>AI Analysis Tools</h2>
+            </div>
+
+            <div class="tools-grid">
+
+                <div class="tool-card">
+                    <div class="tool-icon">🧵</div>
+                    <h3>Thread Detection</h3>
+                    <p>Identifies whether the email belongs to an existing conversation thread.</p>
+                    <span class="tool-status">READY</span>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon">🛡️</div>
+                    <h3>Safety Analyzer</h3>
+                    <p>Checks suspicious words, urgency signals and risky patterns.</p>
+                    <span class="tool-status">READY</span>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon">🧠</div>
+                    <h3>ML Predictor</h3>
+                    <p>Generates a demo prediction score for email safety classification.</p>
+                    <span class="tool-status">READY</span>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon">🔎</div>
+                    <h3>Risk Scanner</h3>
+                    <p>Analyzes potential phishing and suspicious content indicators.</p>
+                    <span class="tool-status">READY</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ANALYSIS DETAILS -->
+        <section class="card details-card">
+
+            <div class="section-title">
+                <div>
+                    <span class="mini-label">ANALYSIS REPORT</span>
+                    <h2>Detection Signals</h2>
+                </div>
+            </div>
+
+            <div id="signals" class="signals">
+
+                <div class="signal">
+                    <span>🧵 Thread Pattern</span>
+                    <strong>Waiting</strong>
+                </div>
+
+                <div class="signal">
+                    <span>🔗 Link Analysis</span>
+                    <strong>Waiting</strong>
+                </div>
+
+                <div class="signal">
+                    <span>⚡ Urgency Detection</span>
+                    <strong>Waiting</strong>
+                </div>
+
+                <div class="signal">
+                    <span>🚨 Suspicious Keywords</span>
+                    <strong>Waiting</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <div>
+            <strong>MailGuard AI</strong>
+            <span> • Smart Email Intelligence</span>
+        </div>
+
+        <p>Hackathon Demo • AI + ML Email Security</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+                      </html>
